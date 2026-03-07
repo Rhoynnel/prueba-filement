@@ -12,6 +12,7 @@ use App\Filament\Resources\Users\Tables\UsersTable;
 use App\Models\User;
 use App\Models\Rol;
 use BackedEnum;
+use UnitEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -23,9 +24,13 @@ class UserResource extends Resource
 
     protected static ?string $navigationLabel = 'Usuarios';
 
+    // allow enum groups as well as simple strings
+    protected static string|UnitEnum|null $navigationGroup = 'Administrador de usuarios';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'usuario';
+    // real column used for titles
+    protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Schema $schema): Schema
     {

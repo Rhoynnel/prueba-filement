@@ -11,6 +11,7 @@ use App\Filament\Resources\Rols\Schemas\RolInfolist;
 use App\Filament\Resources\Rols\Tables\RolsTable;
 use App\Models\Rol;
 use BackedEnum;
+use UnitEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -22,9 +23,13 @@ class RolResource extends Resource
 
     protected static ?string $navigationLabel = 'Roles';
 
+    // use correct union type per Filament 3.0+
+    protected static string|UnitEnum|null $navigationGroup = 'Administrador de usuarios';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'Roles';
+    // used for the resource title on pages; must match a real column
+    protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Schema $schema): Schema
     {
