@@ -25,7 +25,7 @@ class UserResource extends Resource
     protected static ?string $navigationLabel = 'Usuarios';
 
     // allow enum groups as well as simple strings
-    protected static string|UnitEnum|null $navigationGroup = 'Administrador de usuarios';
+    protected static string|UnitEnum|null $navigationGroup = 'Administrador de Usuarios';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
