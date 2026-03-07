@@ -21,8 +21,8 @@ class UsersTable
                     ->label('Email address')
                     ->searchable(),
                 // CORRECCIÓN AQUÍ: 
-                // Usamos el nombre de la relación 'roles' y la columna 'name' de esa tabla
-                TextColumn::make('roles.name') 
+                // Usamos el nombre de la relación 'role' y la columna 'name' de esa tabla
+                TextColumn::make('role.name') 
                     ->label('Roles')
                     ->badge() // Opcional: le da un diseño de etiqueta muy limpio
                     ->color('info')

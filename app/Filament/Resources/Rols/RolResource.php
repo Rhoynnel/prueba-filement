@@ -20,6 +20,8 @@ class RolResource extends Resource
 {
     protected static ?string $model = Rol::class;
 
+    protected static ?string $navigationLabel = 'Roles';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'Roles';
