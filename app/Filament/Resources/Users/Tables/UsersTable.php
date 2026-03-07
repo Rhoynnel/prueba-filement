@@ -20,9 +20,13 @@ class UsersTable
                 TextColumn::make('email')
                     ->label('Email address')
                     ->searchable(),
-                TextColumn::make('roles_id')
-                    ->numeric()
-                    ->sortable(),
+                // CORRECCIÓN AQUÍ: 
+                // Usamos el nombre de la relación 'roles' y la columna 'name' de esa tabla
+                TextColumn::make('roles.name') 
+                    ->label('Roles')
+                    ->badge() // Opcional: le da un diseño de etiqueta muy limpio
+                    ->color('info')
+                    ->searchable(),
                 TextColumn::make('email_verified_at')
                     ->dateTime()
                     ->sortable(),
@@ -37,6 +41,7 @@ class UsersTable
             ])
             ->filters([
                 //
+                
             ])
             ->recordActions([
                 ViewAction::make(),
