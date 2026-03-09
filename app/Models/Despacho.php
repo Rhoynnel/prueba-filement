@@ -29,9 +29,8 @@ class Despacho extends Model
         return $this->belongsTo(Tasa::class, 'tasas_id');
     }
 
-    // Accessor for Filament and other code to treat as an attribute
-    public function getNumeroDespachoAttribute(): string
+    public function detalledespachos()
     {
-        return 'D-' . str_pad($this->id, 6, '0', STR_PAD_LEFT);
+        return $this->hasMany(Detalledespacho::class, 'despachos_id');
     }
 }

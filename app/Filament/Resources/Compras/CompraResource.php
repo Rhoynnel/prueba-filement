@@ -9,6 +9,7 @@ use App\Filament\Resources\Compras\Pages\ViewCompra;
 use App\Filament\Resources\Compras\Schemas\CompraForm;
 use App\Filament\Resources\Compras\Schemas\CompraInfolist;
 use App\Filament\Resources\Compras\Tables\ComprasTable;
+use App\Filament\Resources\Compras\RelationManagers\DetallecompraRelationManager;
 use App\Models\Compra;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -42,7 +43,7 @@ class CompraResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\DetallecompraRelationManager::class,
         ];
     }
 

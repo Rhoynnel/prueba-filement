@@ -18,7 +18,19 @@ class CompraForm
                     ->label('Proveedor')
                     ->relationship('proveedors', 'nombreCompleto')
                     ->searchable()
-                    ->required(),
+                    ->required()
+                    ->createOptionForm([
+                        TextInput::make('rif')
+                            ->label('RIF')
+                            ->required(),
+                        TextInput::make('nombreCompleto')
+                            ->label('Nombre Completo')
+                            ->required(),
+                        TextInput::make('telefono')
+                            ->label('Teléfono'),
+                        TextInput::make('direccion')
+                            ->label('Dirección'),
+                    ]),
                 TextInput::make('numero_factura')
                     ->required(),
                 DatePicker::make('fecha')

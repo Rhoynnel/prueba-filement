@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\Compra;
+use App\Observers\CompraObserver;
+use App\Models\Despacho;
+use App\Observers\DespachoObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Compra::observe(CompraObserver::class);
+        Despacho::observe(DespachoObserver::class);
     }
 }
