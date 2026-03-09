@@ -11,6 +11,7 @@ use App\Filament\Resources\Proveedors\Schemas\ProveedorInfolist;
 use App\Filament\Resources\Proveedors\Tables\ProveedorsTable;
 use App\Models\Proveedor;
 use BackedEnum;
+use UnitEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -19,6 +20,11 @@ use Filament\Tables\Table;
 class ProveedorResource extends Resource
 {
     protected static ?string $model = Proveedor::class;
+
+    protected static ?string $navigationLabel = 'Proveedores';
+    
+    protected static string|UnitEnum|null $navigationGroup = 'Administracion';
+    
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

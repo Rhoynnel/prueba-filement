@@ -23,7 +23,7 @@ class CategoriaResource extends Resource
 
     protected static ?string $navigationLabel = 'Categorias';
 
-    protected static string|UnitEnum|null $navigationGroup = 'Administrador de Productos';
+    protected static string|UnitEnum|null $navigationGroup = 'Productos';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

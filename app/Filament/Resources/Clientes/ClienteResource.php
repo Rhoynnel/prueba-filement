@@ -11,6 +11,7 @@ use App\Filament\Resources\Clientes\Schemas\ClienteInfolist;
 use App\Filament\Resources\Clientes\Tables\ClientesTable;
 use App\Models\Cliente;
 use BackedEnum;
+use UnitEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -19,6 +20,10 @@ use Filament\Tables\Table;
 class ClienteResource extends Resource
 {
     protected static ?string $model = Cliente::class;
+
+    protected static ?string $navigationLabel = 'Clientes';
+
+    protected static string|UnitEnum|null $navigationGroup = 'Administracion';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

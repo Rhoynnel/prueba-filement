@@ -24,7 +24,7 @@ class RolResource extends Resource
     protected static ?string $navigationLabel = 'Roles';
 
     // use correct union type per Filament 3.0+
-    protected static string|UnitEnum|null $navigationGroup = 'Administrador de Usuarios';
+    protected static string|UnitEnum|null $navigationGroup = 'Usuarios';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
